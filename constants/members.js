@@ -5,7 +5,11 @@ const members = [
     },
     {
         name: 'Saif Abdelkareem',
-        desc: "A Game Designer and Graphics Animator",
+        desc: "A Game Designer and Graphic Animator",
+    },
+    {
+        name: 'Sohail Mohamed',
+        desc: "A Graphic Designer"
     }
 ]
 

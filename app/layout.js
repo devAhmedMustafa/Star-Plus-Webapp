@@ -7,6 +7,12 @@ const dm_sans = DM_Sans({ subsets: ['latin'] })
 export const metadata = {
   title: 'STAR Plus',
   description: 'STAR Plus - 2D Games Studio',
+  icons:{
+    icon: {
+      url: '/STAR.png',
+      type: 'image/png'
+    }
+  }
 }
 
 export default function RootLayout({ children }) {
