@@ -6,6 +6,7 @@ import { useState, useRef } from "react";
 import "@styles/FileUpload.css";
 import "@styles/UploadBtn.css";
 import { add_game } from "@/utils/axios_games";
+import "@styles/UploadLoader.css";
 
 export default function UploadGame(){
 
@@ -13,6 +14,8 @@ export default function UploadGame(){
     const [cover, setCover] = useState();
     const [trailer, setTrailer] = useState();
     const [genres, setGenres] = useState([]);
+
+    const [uploading, setUploading] = useState(false);
 
     const [gameFile, setGameFile] = useState();
     const [fileUploaded, setFileUploaded] = useState(false);
@@ -32,6 +35,9 @@ export default function UploadGame(){
     }
 
     const SubmitHandler = (e)=>{
+
+        setUploading(true);
+        
         e.preventDefault();
         const cover_file = e.target.cover.files[0];
         const trailer_file = e.target.trailer.files[0];
@@ -45,7 +51,7 @@ export default function UploadGame(){
         form.append('desc', inputs.desc);
         form.append('genres', genres);
 
-        add_game(form).then(res=>console.log(res.data));
+        add_game(form).then(res=> setUploading(false));
     }
 
     const AddGenre = ()=>{
@@ -62,6 +68,10 @@ export default function UploadGame(){
 
     return (
         <form onSubmit={SubmitHandler} className="flex justify-between" id="game-form">
+
+            {
+                uploading && <Loader/>
+            }
             
             <div className="flex flex-col gap-2 max-w-[50%]">
 
@@ -139,4 +149,19 @@ function GenreInput(){
     return (
         <input type="text" placeholder="Genre" id="genre" className="w-[160px] border-2 border-[#2e2e2e] rounded-full px-3 py-1 bg-[#00000033] focus:outline-none"/>
     )    
+}
+
+function Loader(){
+    return (
+        <div className="absolute top-0 left-0 w-full h-full bg-[#11111177] flex justify-center items-center">
+            <div class="spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        
+    )
 }
