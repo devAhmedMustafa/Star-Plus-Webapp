@@ -32,11 +32,18 @@ export default function UploadGame(){
         setCover(URL.createObjectURL(e.target.files[0]));
 
         const file = e.target.files[0];
-        
-        await put(file.name, file, {
-            contentType,
-            access: 'public',
-        }).then((res=> console.log(res)));
+
+        const response = await fetch(
+            `/api/avatar/upload?filename=${file.name}`,
+            {
+              method: 'POST',
+              body: file,
+            },
+          );
+
+          const newBlob = (await response.json());
+
+          console.log(newBlob);
 
     }
 
