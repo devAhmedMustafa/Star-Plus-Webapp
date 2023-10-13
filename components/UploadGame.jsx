@@ -7,7 +7,7 @@ import "@styles/FileUpload.css";
 import "@styles/UploadBtn.css";
 import { add_game } from "@/utils/axios_games";
 import "@styles/UploadLoader.css";
-import { put } from "@vercel/blob";
+
 import { blobUpload } from "@/utils/blob_storage";
 
 
