@@ -8,7 +8,7 @@ import "@styles/UploadBtn.css";
 import { add_game } from "@/utils/axios_games";
 import "@styles/UploadLoader.css";
 
-import { blobUpload, GET } from "@/utils/blob_storage";
+import { blobUpload } from "@/utils/blob_storage";
 
 
 export default function UploadGame(){
