@@ -7,7 +7,7 @@ const blobUpload = async (file)=>{
     return res;
 }
  
-export async function GET() {
+const GET = async ()=>{
     const res = await list({
         token: "vercel_blob_rw_HkgyrPpNbcUJOswO_nk711QQcAT244dnLdChHJnVEPvkMAg"
     });
