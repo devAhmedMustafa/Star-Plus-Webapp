@@ -25,7 +25,7 @@ export default function AdminGames(){
 function GameBox({id, name, cover}){
     return (
         <div className="relative rounded-lg overflow-hidden">
-            <img src={`${BASE_URL}${cover}`} className="w-full"/>
+            <img src={`${cover}`} className="w-full"/>
 
             <div className="absolute top-0 left-0 w-full h-full z-10 flex justify-center items-center">
                 <DeleteBtn id={id}/>

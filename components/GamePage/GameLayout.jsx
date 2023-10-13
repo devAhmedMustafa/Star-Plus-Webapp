@@ -16,12 +16,12 @@ export default function Game(){
     const [gameSize, setGameSize] = useState();
 
     async function createFile(){
-        const res = await fetch(`${BASE_URL}${game.cover}`);
+        const res = await fetch(`${game.game_files}`);
         const data = await res.blob();
         let metadata = {
-            type: 'image/jpg'
+            type: '.zip'
         }
-        const file = new File([data], 'test.jpg', metadata)
+        const file = new File([data], 'test.zip', metadata)
         setGameSize(parseFloat(file.size / 1000000))
     }
 
@@ -41,7 +41,7 @@ export default function Game(){
 
             <div className="flex flex-col gap-5">
                 <Details name={game.name} desc={game.desc} genres={game.genres} size={gameSize}/>
-                <Download id={game._id}/>
+                <Download id={game.game_files}/>
             </div>
 
             <div className="rounded-md w-[70%] overflow-hidden shadow-2xl">
@@ -92,11 +92,11 @@ function Details({name, desc, genres, size}){
     )
 }
 
-function Download({id}){
+function Download({game_file}){
 
     return (
         
-        <a href={`${BASE_URL}games/download/${id}`} target="_blank" className="button">
+        <a href={game_file} target="_blank" className="button">
 
             <i className="fa-solid fa-cloud-arrow-down"></i>
 

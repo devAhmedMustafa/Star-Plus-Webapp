@@ -56,15 +56,12 @@ export default function UploadGame(){
         setUploading(true);
         
         e.preventDefault();
-        const cover_file = e.target.cover.files[0];
-        const trailer_file = e.target.trailer.files[0];
-        const game_file = e.target.game.files[0];
 
         const form = new FormData();
 
         form.append('cover', cover);
         form.append('trailer', trailer);
-        form.append('game', game)
+        form.append('game_files', game)
 
         form.append('name', inputs.name);
         form.append('desc', inputs.desc);
