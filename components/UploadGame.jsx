@@ -194,11 +194,15 @@ function BlobsList(){
         const { blobs } = await list();
         setList(blobs)
         console.log(blobs)
-    })
+    }, [])
 
     return(
         <div>
-
+            {
+                list.map((item)=>{
+                    <div>{item.url}</div>
+                })
+            }
         </div>
     )
 }
