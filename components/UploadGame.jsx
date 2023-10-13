@@ -20,7 +20,6 @@ export default function UploadGame(){
 
     const [uploading, setUploading] = useState(false);
 
-    const [gameFile, setGameFile] = useState();
     const [fileUploaded, setFileUploaded] = useState(false);
 
     const ChangeHandler = (e)=>{
