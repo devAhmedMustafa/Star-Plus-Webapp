@@ -38,6 +38,8 @@ export default function UploadGame(){
             access: 'public',
         });
 
+        console.log(response.json())
+
     }
 
     const VideoHandler = (e)=>{
