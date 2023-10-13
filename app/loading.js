@@ -2,7 +2,7 @@ import "@styles/MainLoader.css";
 
 export default function MainLoader(){
     return (
-        <div className="absolute w-full h-full top-0 left-0 flex justify-center items-center">
+        <div className="absolute w-full h-full top-0 left-0 flex justify-center items-center main-loader">
             <div class="loader">
                 <svg viewBox="0 0 80 80">
                     <circle id="test" cx="40" cy="40" r="32"></circle>

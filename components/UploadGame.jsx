@@ -2,11 +2,13 @@
 
 import "@styles/Inputs.css";
 import axios from "axios";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "@styles/FileUpload.css";
 import "@styles/UploadBtn.css";
 import { add_game } from "@/utils/axios_games";
 import "@styles/UploadLoader.css";
+
+import { list } from '@vercel/blob';
 
 import { blobUpload } from "@/utils/blob_storage";
 
@@ -159,6 +161,8 @@ export default function UploadGame(){
 
             }
 
+            <BlobsList/>
+
         </form>
     )
 }
@@ -179,5 +183,22 @@ function Loader(){
             </div>
         </div>
         
+    )
+}
+
+function BlobsList(){
+
+    const [list, setList] = useState([])
+
+    useEffect(async ()=>{
+        const { blobs } = await list();
+        setList(blobs)
+        console.log(blobs)
+    })
+
+    return(
+        <div>
+
+        </div>
     )
 }
