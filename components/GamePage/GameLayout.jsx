@@ -65,7 +65,7 @@ function Trailer({video_url}){
             {
                 video_url!=undefined?
                 <video width='100%' autoPlay loop muted>
-                    <source src={`${BASE_URL}${video_url}`}/>
+                    <source src={`${video_url}`}/>
                 </video>:
                 <p>Not Supported</p>
             }
