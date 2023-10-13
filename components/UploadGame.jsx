@@ -8,9 +8,7 @@ import "@styles/UploadBtn.css";
 import { add_game } from "@/utils/axios_games";
 import "@styles/UploadLoader.css";
 
-import { list } from '@vercel/blob';
-
-import { blobUpload } from "@/utils/blob_storage";
+import { blobUpload, GET } from "@/utils/blob_storage";
 
 
 export default function UploadGame(){
@@ -191,18 +189,11 @@ function BlobsList(){
     const [list, setList] = useState([])
 
     useEffect(async ()=>{
-        const { blobs } = await list();
-        setList(blobs)
-        console.log(blobs)
+        GET();
     }, [])
 
     return(
         <div>
-            {
-                list.map((item)=>{
-                    <div>{item.url}</div>
-                })
-            }
         </div>
     )
 }

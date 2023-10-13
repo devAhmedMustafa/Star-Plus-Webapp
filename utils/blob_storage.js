@@ -1,4 +1,5 @@
 import { put } from "@vercel/blob";
+import { list } from '@vercel/blob';
 
 const blobUpload = async (file)=>{
     console.log(file);
@@ -6,5 +7,14 @@ const blobUpload = async (file)=>{
 
     return res;
 }
+ 
+export const runtime = 'edge';
+ 
+export async function GET(request) {
+  const { blobs } = await list({
+    token: "vercel_blob_rw_HkgyrPpNbcUJOswO_nk711QQcAT244dnLdChHJnVEPvkMAg",
+  });
+  return Response.json(blobs);
+}
 
-export {blobUpload}
+export {blobUpload, GET}
