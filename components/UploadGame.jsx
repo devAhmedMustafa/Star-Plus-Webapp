@@ -171,7 +171,7 @@ function GenreInput(){
 
 function Loader(){
     return (
-        <div className="absolute top-0 left-0 w-full h-full bg-[#11111177] flex justify-center items-center">
+        <div className="absolute top-0 left-0 w-full h-full bg-[#11111177] flex justify-center items-center upload-loader">
             <div class="container">
                 <div class="loader">
                     <div class="shadow"></div>

@@ -41,7 +41,7 @@ export default function Game(){
 
             <div className="flex flex-col gap-5">
                 <Details name={game.name} desc={game.desc} genres={game.genres} size={gameSize}/>
-                <Download id={game.game_files}/>
+                <Download game_file={game.game_files}/>
             </div>
 
             <div className="rounded-md w-[70%] overflow-hidden shadow-2xl">
