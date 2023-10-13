@@ -7,6 +7,7 @@ import "@styles/FileUpload.css";
 import "@styles/UploadBtn.css";
 import { add_game } from "@/utils/axios_games";
 import "@styles/UploadLoader.css";
+import { upload } from '@vercel/blob/client';
 
 export default function UploadGame(){
 
@@ -26,8 +27,16 @@ export default function UploadGame(){
 
         setInputs(values=> ({...values, [name]:value}))
     }
-    const ImageHandler = (e)=>{
+    const ImageHandler = async (e)=>{
         setCover(URL.createObjectURL(e.target.files[0]));
+        
+        const file = e.target.files[0];
+ 
+          const newBlob = await upload(file.name, file, {
+            access: 'public',
+            handleUploadUrl: '/api/avatar/upload',
+          });
+
     }
 
     const VideoHandler = (e)=>{
