@@ -159,8 +159,6 @@ export default function UploadGame(){
 
             }
 
-            <BlobsList/>
-
         </form>
     )
 }
@@ -181,19 +179,5 @@ function Loader(){
             </div>
         </div>
         
-    )
-}
-
-function BlobsList(){
-
-    const [list, setList] = useState([])
-
-    useEffect(()=>{
-        GET().then((res=> console.log(res)));
-    }, [])
-
-    return(
-        <div>
-        </div>
     )
 }
