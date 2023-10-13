@@ -33,17 +33,9 @@ export default function UploadGame(){
 
         const file = e.target.files[0];
 
-        const response = await fetch(
-            `/api/avatar/upload?filename=${file.name}`,
-            {
-              method: 'POST',
-              body: file,
-            },
-          );
+        const { url } = await put('articles/blob.txt', 'Hello World!', { access: 'public' });
 
-          const newBlob = (await response.json());
-
-          console.log(newBlob);
+        console.log(url);
 
     }
 
