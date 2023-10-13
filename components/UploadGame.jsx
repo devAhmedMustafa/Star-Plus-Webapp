@@ -47,9 +47,9 @@ export default function UploadGame(){
 
         const form = new FormData();
         form.append('name', inputs.name);
-        form.append('cover', blobUpload(cover_file));
-        form.append('trailer', blobUpload(trailer_file));
-        form.append('game_files', blobUpload(game_file));
+        cover_file&& form.append('cover', blobUpload(cover_file));
+        trailer_file&& form.append('trailer', blobUpload(trailer_file));
+        game_file&& form.append('game_files', blobUpload(game_file));
         form.append('desc', inputs.desc);
         form.append('genres', genres);
 
