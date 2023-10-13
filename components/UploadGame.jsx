@@ -9,7 +9,6 @@ import { add_game } from "@/utils/axios_games";
 import "@styles/UploadLoader.css";
 import { put } from "@vercel/blob";
 
-const { url } = await put('articles/blob.txt', 'Hello World!', { access: 'public' });
 
 export default function UploadGame(){
 
@@ -31,8 +30,13 @@ export default function UploadGame(){
     }
     const ImageHandler = async (e)=>{
         setCover(URL.createObjectURL(e.target.files[0]));
+
+        const file = e.target.files[0];
         
-        
+        const response = await put(file.name, file, {
+            contentType,
+            access: 'public',
+        });
 
     }
 
