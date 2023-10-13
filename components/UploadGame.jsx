@@ -189,7 +189,7 @@ function BlobsList(){
     const [list, setList] = useState([])
 
     useEffect(async ()=>{
-        GET();
+        GET().then((res=> console.log(res.blobs)));
     }, [])
 
     return(
