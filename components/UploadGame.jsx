@@ -32,21 +32,27 @@ export default function UploadGame(){
         setInputs(values=> ({...values, [name]:value}))
     }
     const ImageHandler = (e)=>{
+        setUploading(true);
         blobUpload(e.target.files[0]).then((res)=>{
             setCover(res.url)
+            setUploading(false);
         })
     }
 
     const VideoHandler = (e)=>{
+        setUploading(true);
         blobUpload(e.target.files[0]).then((res)=>{
             setTrailer(res.url);
+            setUploading(false);
         })
     }
 
     const GameFileHandler = (e)=>{
+        setUploading(true);
         blobUpload(e.target.files[0]).then((res)=>{
             setGame(res.url);
             setFileUploaded(true);
+            setUploading(false);
         })
         
     }
@@ -166,12 +172,10 @@ function GenreInput(){
 function Loader(){
     return (
         <div className="absolute top-0 left-0 w-full h-full bg-[#11111177] flex justify-center items-center">
-            <div class="spinner">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="container">
+                <div class="loader">
+                    <div class="shadow"></div>
+                </div>
             </div>
         </div>
         
