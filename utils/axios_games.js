@@ -16,7 +16,7 @@ const add_game = async (formData)=>{
 
     const res = await axios.post(`${BASE_URL}games/`, formData, {
         headers:{
-            'Content-Type': 'multipart/form-data',
+            'Content-Type': 'application/json',
         }
     });
 

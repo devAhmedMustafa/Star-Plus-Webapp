@@ -27,7 +27,7 @@ export default function GamesContainer(){
 function GameBox({name, cover}){
     return (
         <Link href={`/${name}`} className="relative rounded-sm overflow-hidden flex flex-col gap-1">
-            <img src={`${BASE_URL}${cover}`} className="w-full"/>
+            <img src={`${cover}`} className="w-full"/>
             <h1 className="text-xl">{name}</h1>
         </Link>
     )

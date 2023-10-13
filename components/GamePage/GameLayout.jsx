@@ -45,7 +45,7 @@ export default function Game(){
             </div>
 
             <div className="rounded-md w-[70%] overflow-hidden shadow-2xl">
-                <img className="w-full" src={`${BASE_URL}${game.cover}`}/>
+                <img className="w-full" src={`${game.cover}`}/>
             </div>
             
         </div>

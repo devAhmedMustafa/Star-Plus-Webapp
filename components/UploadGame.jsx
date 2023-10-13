@@ -14,8 +14,11 @@ import { blobUpload } from "@/utils/blob_storage";
 export default function UploadGame(){
 
     const [inputs, setInputs] = useState({})
-    const [cover, setCover] = useState();
-    const [trailer, setTrailer] = useState();
+
+    const [cover, setCover] = useState("");
+    const [trailer, setTrailer] = useState("");
+    const [game, setGame] = useState("");
+
     const [genres, setGenres] = useState([]);
 
     const [uploading, setUploading] = useState(false);
@@ -28,12 +31,24 @@ export default function UploadGame(){
 
         setInputs(values=> ({...values, [name]:value}))
     }
-    const ImageHandler = async (e)=>{
-        setCover(URL.createObjectURL(e.target.files[0]));
+    const ImageHandler = (e)=>{
+        blobUpload(e.target.files[0]).then((res)=>{
+            setCover(res.url)
+        })
     }
 
     const VideoHandler = (e)=>{
-        setTrailer(URL.createObjectURL(e.target.files[0]));
+        blobUpload(e.target.files[0]).then((res)=>{
+            setTrailer(res.url);
+        })
+    }
+
+    const GameFileHandler = (e)=>{
+        blobUpload(e.target.files[0]).then((res)=>{
+            setGame(res.url);
+            setFileUploaded(true);
+        })
+        
     }
 
     const SubmitHandler = (e)=>{
@@ -46,19 +61,12 @@ export default function UploadGame(){
         const game_file = e.target.game.files[0];
 
         const form = new FormData();
-        
 
-        cover_file&& 
-            blobUpload(cover_file).then(res=> form.append('cover', res.url))
-        
-        trailer_file&& 
-            blobUpload(trailer_file).then(res=> form.append('trailer', res.url))
-
-        game_file&& 
-            blobUpload(game_file).then(res=> form.append('game_files', res.url))
+        form.append('cover', cover);
+        form.append('trailer', trailer);
+        form.append('game', game)
 
         form.append('name', inputs.name);
-
         form.append('desc', inputs.desc);
         form.append('genres', genres);
 
@@ -71,10 +79,6 @@ export default function UploadGame(){
         setGenres([...genres, genre]);
         console.log(genres)
         document.querySelector('#genre').value = '';
-    }
-
-    const UploadGameFile = ()=>{
-        setFileUploaded(true);
     }
 
     return (
@@ -125,7 +129,7 @@ export default function UploadGame(){
 
                     <label htmlFor="game" className="Btn"> <i className="fa-solid fa-file-circle-plus"></i> Upload Game</label>
 
-                    <input type="file" className="hidden" id="game" name="game" accept=".zip,.rar,.7zip" onChange={UploadGameFile}/>
+                    <input type="file" className="hidden" id="game" name="game" accept=".zip,.rar,.7zip" onChange={GameFileHandler}/>
 
                     {fileUploaded && <i className="fa-solid fa-circle-check text-green-500"></i>}
                     
