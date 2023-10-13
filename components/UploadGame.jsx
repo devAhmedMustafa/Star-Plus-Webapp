@@ -8,6 +8,7 @@ import "@styles/UploadBtn.css";
 import { add_game } from "@/utils/axios_games";
 import "@styles/UploadLoader.css";
 import { put } from "@vercel/blob";
+import { blobUpload } from "@/utils/blob_storage";
 
 
 export default function UploadGame(){
@@ -30,13 +31,6 @@ export default function UploadGame(){
     }
     const ImageHandler = async (e)=>{
         setCover(URL.createObjectURL(e.target.files[0]));
-
-        const file = e.target.files[0];
-
-        const { url } = await put('articles/blob.txt', 'Hello World!', { access: 'public' });
-
-        console.log(url);
-
     }
 
     const VideoHandler = (e)=>{
@@ -54,9 +48,9 @@ export default function UploadGame(){
 
         const form = new FormData();
         form.append('name', inputs.name);
-        form.append('file', cover_file);
-        form.append('file', trailer_file);
-        form.append('file', game_file);
+        form.append('cover', blobUpload(cover_file));
+        form.append('trailer', blobUpload(trailer_file));
+        form.append('game_files', blobUpload(game_file));
         form.append('desc', inputs.desc);
         form.append('genres', genres);
 
