@@ -11,10 +11,10 @@ const blobUpload = async (file)=>{
 export const runtime = 'edge';
  
 export async function GET() {
-  const res = await list({
+    const res = await list({
     token: "vercel_blob_rw_HkgyrPpNbcUJOswO_nk711QQcAT244dnLdChHJnVEPvkMAg",
-  });
-  return res;
+    });
+    return res;
 }
 
 export {blobUpload, GET}
