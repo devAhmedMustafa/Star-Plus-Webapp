@@ -33,12 +33,10 @@ export default function UploadGame(){
 
         const file = e.target.files[0];
         
-        const response = await put(file.name, file, {
+        await put(file.name, file, {
             contentType,
             access: 'public',
-        });
-
-        console.log(response.json())
+        }).then((res=> console.log(res)));
 
     }
 
