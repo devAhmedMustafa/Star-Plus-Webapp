@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Navbar(){
     return (
-        <nav className="py-4 flex justify-between items-center">
+        <nav className="py-4 flex justify-between items-center w-full">
             <Link href='/'>
                 <Image src={logo} width={55}/>
             </Link>

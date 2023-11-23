@@ -36,7 +36,7 @@ export default function Game(){
     }, [])
 
     return (
-        <div className="flex flex-row justify-center gap-8">
+        <div className="flex flex-row justify-between gap-8 flex-wrap">
             <Trailer video_url={game.trailer}/>
 
             <div className="flex flex-col gap-5">
@@ -44,7 +44,7 @@ export default function Game(){
                 <Download game_file={game.game_files}/>
             </div>
 
-            <div className="rounded-md w-[70%] overflow-hidden shadow-2xl">
+            <div className="rounded-md w-[50%] overflow-hidden hidden lg:block shadow-2xl">
                 <img className="w-full" src={`${game.cover}`}/>
             </div>
             
@@ -56,7 +56,7 @@ function Trailer({video_url}){
 
     return (
         
-        <div className="overflow-hidden w-screen h-screen absolute top-0 left-0 -z-10">
+        <div className="overflow-hidden w-screen lg:h-screen lg:absolute top-0 left-0 -z-10">
 
             <div className="absolute w-full h-full bg-[#1414146e]">
 

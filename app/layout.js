@@ -21,13 +21,11 @@ export default function RootLayout({ children }) {
       <head>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'></link>
       </head>
-      <body className={`${dm_sans.className} flex justify-center`}>
-        <div className='lg:w-[75%] flex flex-col gap-6'>
-
-          <Navbar/>
-          {children}
-
-        </div>
+      <body className={`${dm_sans.className}`}>
+          <div className='lg:w-[75%] m-auto flex flex-col gap-6 px-8 lg:p-0'>
+            <Navbar/>
+            {children}
+          </div>
       </body>
     </html>
   )

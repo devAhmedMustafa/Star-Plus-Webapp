@@ -8,9 +8,6 @@ import "@styles/UploadBtn.css";
 import { add_game } from "@/utils/axios_games";
 import "@styles/UploadLoader.css";
 
-import { blobUpload } from "@/utils/blob_storage";
-
-
 export default function UploadGame(){
 
     const [inputs, setInputs] = useState({})
@@ -33,27 +30,14 @@ export default function UploadGame(){
     }
     const ImageHandler = (e)=>{
         setUploading(true);
-        blobUpload(e.target.files[0]).then((res)=>{
-            setCover(res.url)
-            setUploading(false);
-        })
     }
 
     const VideoHandler = (e)=>{
         setUploading(true);
-        blobUpload(e.target.files[0]).then((res)=>{
-            setTrailer(res.url);
-            setUploading(false);
-        })
     }
 
     const GameFileHandler = (e)=>{
         setUploading(true);
-        blobUpload(e.target.files[0]).then((res)=>{
-            setGame(res.url);
-            setFileUploaded(true);
-            setUploading(false);
-        })
         
     }
 
@@ -65,10 +49,9 @@ export default function UploadGame(){
 
         const form = new FormData();
 
-        form.append('cover', cover);
-        form.append('trailer', trailer);
-        form.append('game_files', game)
-
+        form.append('cover', inputs.cover);
+        form.append('trailer', inputs.trailer);
+        form.append('game_files', inputs.game_files)
         form.append('name', inputs.name);
         form.append('desc', inputs.desc);
         form.append('genres', genres);
@@ -101,6 +84,18 @@ export default function UploadGame(){
                     <input onChange={ChangeHandler} placeholder="Description" type="text" name="desc" className="textInput"/>
                 </div>
 
+                <div className="textInputWrapper w-[400px]">
+                    <input onChange={ChangeHandler} placeholder="Cover" type="text" name="cover" className="textInput"/>
+                </div>
+
+                <div className="textInputWrapper w-[400px]">
+                    <input onChange={ChangeHandler} placeholder="Trailer" type="text" name="trailer" className="textInput"/>
+                </div>
+
+                <div className="textInputWrapper w-[400px]">
+                    <input onChange={ChangeHandler} placeholder="Game" type="text" name="game_files" className="textInput"/>
+                </div>
+
                 <div className="flex gap-4 items-center">
                     <GenreInput/>
                     <button type="button" onClick={AddGenre}>
@@ -118,7 +113,7 @@ export default function UploadGame(){
                     </div>
                 </div>
 
-                <>
+                {/* <>
                     <label htmlFor="cover" className="Btn"> <i className="fa-solid fa-file-circle-plus"></i> Upload Cover</label>
                     <input type="file" className="hidden" id="cover" name="cover" onChange={ImageHandler} accept="image/*"/>
                 </>
@@ -136,7 +131,7 @@ export default function UploadGame(){
 
                     {fileUploaded && <i className="fa-solid fa-circle-check text-green-500"></i>}
                     
-                </div>
+                </div> */}
 
                 <button className="pinBtn">
                     <span className="IconContainer"> 
