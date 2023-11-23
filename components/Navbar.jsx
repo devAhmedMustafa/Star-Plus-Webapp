@@ -1,6 +1,6 @@
 "use client";
 
-import logo from "@assets/STARplus.png";
+import logo from "@assets/STAR.png";
 import Image from "next/image";
 import Link from "next/link";
 
