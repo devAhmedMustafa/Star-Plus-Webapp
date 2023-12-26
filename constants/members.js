@@ -5,7 +5,7 @@ const members = [
     },
     {
         name: 'Saif Abdelkareem',
-        desc: "Game Designer and Graphic Animator",
+        desc: "Game Designer, Pixelart Artist and Graphic Animator",
     },
     {
         name: 'Sohail Mohamed',
