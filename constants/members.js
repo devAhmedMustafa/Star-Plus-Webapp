@@ -17,7 +17,7 @@ const members = [
     },
     {
         name: 'Habiba Hossam',
-        desc: "Game Designer"
+        desc: "Game and Level Designer"
     }
 ]
 
