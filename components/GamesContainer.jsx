@@ -1,6 +1,6 @@
 "use client"
 
-import TestGames from "@/constants/GamesTest";
+import TestGames from "@/tests/GamesTest";
 import { fetch_games_list } from "@/utils/axios_games";
 import Link from "next/link";
 import Image from "next/image";
