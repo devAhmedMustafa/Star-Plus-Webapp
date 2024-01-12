@@ -31,7 +31,7 @@ export default function Navbar(){
             <Section extraClasses="justify-center">
                 <i className="fa-brands fa-facebook-f"></i>
                 <i className="fa-brands fa-x-twitter"></i>
-                <i className="fa-brands fa-instagram"></i>
+                <Link target="_blank" href="https://www.instagram.com/starplus.studio"><i className="fa-brands fa-instagram"></i></Link>
                 <i className="fa-brands fa-youtube"></i>
             </Section>
 
