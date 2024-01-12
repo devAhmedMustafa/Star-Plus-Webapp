@@ -1,11 +1,8 @@
 "use client"
 
 import { delete_game, fetch_games_list } from "@/utils/axios_games"
-import axios from "axios"
-import Link from "next/link"
 import { useEffect, useState } from "react"
 import "@styles/Buttons/DeleteBtn.css";
-import { BASE_URL } from "@/constants/Backend"
 
 export default function AdminGames(){
 

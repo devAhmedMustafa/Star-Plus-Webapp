@@ -1,6 +1,6 @@
 "use client"
 
-import "@styles/TranslationBtn.css"
+import "@styles/Buttons/TranslationBtn.css"
 
 export default function Translations(){
     return (

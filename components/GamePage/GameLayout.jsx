@@ -1,8 +1,7 @@
 "use client"
 
-import { download_game, fetch_game } from "@/utils/axios_games";
+import { fetch_game } from "@/utils/axios_games";
 import { useEffect, useState } from "react"
-import { BASE_URL } from "@/constants/Backend";
 import "@styles/Buttons/DownloadBtn.css";
 
 export default function Game(){
