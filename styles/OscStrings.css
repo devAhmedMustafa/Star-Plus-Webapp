@@ -1,0 +1,3 @@
+.svg path{
+    filter: url(#glow)
+}

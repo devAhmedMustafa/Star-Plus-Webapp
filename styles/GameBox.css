@@ -1,0 +1,11 @@
+.dBox:hover{
+    background-color: rgba(53, 26, 41, 0.562);
+}
+
+.dBox:hover .desc{
+    display: block;
+}
+
+.dBox:hover .logo{
+    top:40%;
+}

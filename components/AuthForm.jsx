@@ -1,29 +1,16 @@
 "use client"
 
-import { register } from "@/utils/axios_auth"
-import "@styles/AuthBtn.css"
-import { redirect } from "next/dist/server/api-utils"
+import { authorize } from "@/utils/axios_auth"
+import "@styles/Buttons/AuthBtn.css"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 
-export default function AuthForm({children}){
+export default function AuthForm({children, SubmitHandler}){
 
-    const navigate = useRouter()
-
-    const SubmitHandler = (e)=>{
-        e.preventDefault();
-        const form = e.target;
-
-        const formData = new FormData({
-            username: form.username,
-            password: form.password,
-        });
-
-        register(formData).then((res)=> navigate('/login'))
-    }
+    const router = useRouter()
     
     useEffect(()=>{
-        if (localStorage['token']) navigate('/');
+        authorize().then(res=> router.push('/')); 
     })
 
     return (

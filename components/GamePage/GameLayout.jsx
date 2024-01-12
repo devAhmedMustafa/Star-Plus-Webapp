@@ -3,7 +3,7 @@
 import { download_game, fetch_game } from "@/utils/axios_games";
 import { useEffect, useState } from "react"
 import { BASE_URL } from "@/constants/Backend";
-import "@styles/DownloadBtn.css";
+import "@styles/Buttons/DownloadBtn.css";
 
 export default function Game(){
 

@@ -1,23 +1,33 @@
 const members = [
     { 
         name: 'Ahmed Mustafa',
-        desc: "Software Engineer, Game Developer and Sound Designer"
+        role: "System Designer & Animator",
+        insta: "https://www.instagram.com/ahmedmustafa.u/"
     },
     {
         name: 'Saif Abdelkareem',
-        desc: "Game Designer, Pixelart Artist and Graphic Animator",
+        role: "Pixel Artist & Narrator",
     },
     {
         name: 'Sohail Mohamed',
-        desc: "Graphic Designer"
+        role: "Graphic Designer",
+        insta: "https://www.instagram.com/super_sohail_10/"
     },
     {
         name: 'Abdelrahman Elbana',
-        desc: "Game Developer"
+        role: "Mechanics Designer & Animator",
     },
     {
         name: 'Habiba Hossam',
-        desc: "Game and Level Designer"
+        role: "Level Designer & Sound Designer",
+    },
+    {
+        name: 'Youssef Bouzayen',
+        role: "Music Composer",
+    },
+    {
+        name: 'Menna',
+        role: "Artist",
     }
 ]
 
