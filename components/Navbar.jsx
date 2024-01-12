@@ -25,7 +25,7 @@ export default function Navbar(){
                 <Link href="/games">Games</Link>
                 <Link href="/">Assets</Link>
                 <Link href="/">About</Link>
-                <Link href="/">Contact Us</Link>
+                <Link href="/">Contact</Link>
             </Section>
 
             <Section extraClasses="justify-center">

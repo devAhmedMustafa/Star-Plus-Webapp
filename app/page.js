@@ -3,7 +3,7 @@ import SloganSec from '@components/SloganSec';
 import AboutUs from '@/components/Crew';
 import About from '@/components/About';
 import Oscillations from '@/components/Oscillations';
-import logo from "@assets/STARplus.svg";
+import logo from "@assets/STAR.png";
 
 
 export default function Home() {

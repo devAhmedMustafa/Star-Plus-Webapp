@@ -21,13 +21,13 @@ export default function AboutUs(){
 
 function Indv_Box({name, role, insta}){
     return (
-        <div className={`bg-[#2020208c] rounded-sm w-full text-start flex h-[50px] items-center transition-all hover:bg-[#f7257dc9] hover:drop-shadow-glow`}>
-            <p className="text-lg w-[15%] py-2 px-4">{name}</p>
+        <div className={`bg-[#2020208c] rounded-sm w-full text-start flex flex-col md:flex-row md:h-[50px] h-fit items-center transition-all hover:bg-[#f7257dc9] hover:drop-shadow-glow`}>
+            <p className="text-lg md:w-[15%] py-2 px-4">{name}</p>
             <div className="w-[85%] h-full flex justify-between items-center p-4">
                 <p className="40%">
                     {role}
                 </p>
-                <div>
+                <div className="flex items-center">
                     { insta&& <Link target="_blank" href={insta}><i className="fa-brands fa-instagram text-xl"></i></Link>
                     }
                 </div>
