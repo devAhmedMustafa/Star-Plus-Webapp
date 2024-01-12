@@ -1,6 +1,5 @@
 "use client"
 
-import TestGames from "@/tests/GamesTest";
 import { fetch_games_list } from "@/utils/axios_games";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,7 +11,7 @@ export default function GamesContainer(){
     const [games, setGames] = useState([]);
 
     useEffect(()=>{
-        fetch_games_list().then(res=> setGames(res.data)).catch(err => setGames(TestGames));
+        fetch_games_list().then(res=> setGames(res.data));
     }, [])
 
     return (
