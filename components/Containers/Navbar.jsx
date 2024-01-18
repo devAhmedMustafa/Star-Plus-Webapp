@@ -1,6 +1,6 @@
 "use client";
 
-import { authorize, logout } from "@/utils/axios_auth";
+import { authorize, logout } from "@/utils/AxiosAuth";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import "@styles/Buttons/LogoutBtn.css"
@@ -20,15 +20,15 @@ export default function Navbar(){
     }, [])
 
     return (
-        <nav className="flex flex-wrap py-2 justify-center md:justify-between items-center w-full">
+        <nav className="flex flex-wrap px-2 justify-center md:justify-between items-center w-full sticky bg-[rgba(22,22,22,0.58)] rounded-full mt-2">
             <Section>
                 <Link href="/games">Games</Link>
-                <Link href="/">Assets</Link>
+                <Link href="/assets">Assets</Link>
                 <Link href="/">About</Link>
                 <Link href="/">Contact</Link>
             </Section>
 
-            <Section extraClasses="justify-center">
+            <Section extraClasses="justify-center items-center">
                 <i className="fa-brands fa-facebook-f"></i>
                 <i className="fa-brands fa-x-twitter"></i>
                 <Link target="_blank" href="https://www.instagram.com/starplus.studio"><i className="fa-brands fa-instagram"></i></Link>

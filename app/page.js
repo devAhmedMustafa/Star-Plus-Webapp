@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import SloganSec from '@components/SloganSec';
-import AboutUs from '@/components/Crew';
-import About from '@/components/About';
-import Oscillations from '@/components/Oscillations';
+import SloganSec from '@/components/Containers/SloganSec';
+import AboutUs from '@/components/Static/Crew';
+import About from '@/components/Static/About';
+import Oscillations from '@/components/Advanced CGs/Oscillations';
 import logo from "@assets/STAR.png";
 
 

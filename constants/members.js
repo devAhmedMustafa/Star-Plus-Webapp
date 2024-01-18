@@ -26,7 +26,7 @@ const members = [
         role: "Music Composer",
     },
     {
-        name: 'Menna',
+        name: 'Menna Hikal',
         role: "Artist",
     }
 ]

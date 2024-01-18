@@ -1,5 +1,5 @@
-import AdminGames from "@/components/AdminGames";
-import UploadGame from "@components/UploadGame";
+import AdminGames from "@/components/Admin/AdminGames";
+import UploadGame from "@/components/Admin/UploadGame";
 
 export default function(){
     return (

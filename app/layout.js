@@ -1,6 +1,6 @@
 import './globals.css'
 import { DM_Sans } from 'next/font/google'
-import Navbar from '@components/Navbar';
+import Navbar from '@/components/Containers/Navbar';
 import { GlobalContextProvider } from './Context/store';
 
 const dm_sans = DM_Sans({ subsets: ['latin'] })

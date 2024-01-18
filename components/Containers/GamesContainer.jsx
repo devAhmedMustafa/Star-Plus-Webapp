@@ -1,6 +1,6 @@
 "use client"
 
-import { fetch_games_list } from "@/utils/axios_games";
+import { fetch_games_list } from "@/utils/AxiosGames";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -16,7 +16,6 @@ export default function GamesContainer(){
 
     return (
         <div>
-            <h1 className="text-3xl font-bold mb-5 text-center">All Games</h1>
             <div className="flex flex-col xl:flex-row justify-around xl:px-40 py-4 bg-neutral-900">
                 
                 {games.map((g)=> <GameBox name={g.name} cover={g.cover} desc={g.desc}/>)}

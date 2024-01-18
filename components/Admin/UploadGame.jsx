@@ -4,7 +4,7 @@ import "@styles/Inputs.css";
 import { useState, useRef, useEffect } from "react";
 import "@styles/FileUpload.css";
 import "@styles/Buttons/UploadBtn.css";
-import { add_game } from "@/utils/axios_games";
+import { add_game } from "@/utils/AxiosGames";
 import "@styles/UploadLoader.css";
 
 export default function UploadGame(){

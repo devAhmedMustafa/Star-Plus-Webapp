@@ -1,6 +1,6 @@
 "use client"
 
-import { authorize } from "@/utils/axios_auth"
+import { authorize } from "@/utils/AxiosAuth"
 import "@styles/Buttons/AuthBtn.css"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"

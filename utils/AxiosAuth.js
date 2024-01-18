@@ -25,6 +25,21 @@ export const register = async (user)=>{
     return res;
 }
 
+export const sendVerifyEmail = async (email)=>{
+    const res = await axios.post(`${BASE_URL}auth/send_activate_token/`, {email: email}, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    return res;
+
+}
+
+export const getUserByUsername = async (username)=>{
+    const res = await axios.get(`${BASE_URL}auth/getUserByUsername/${username}`);
+    return res;
+}
+
 export const logout = async ()=>{
     delete localStorage["token"];
     delete localStorage["id"];

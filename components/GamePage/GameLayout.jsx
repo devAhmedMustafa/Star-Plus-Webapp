@@ -1,6 +1,6 @@
 "use client"
 
-import { fetch_game } from "@/utils/axios_games";
+import { fetch_game } from "@/utils/AxiosGames";
 import { useEffect, useState } from "react"
 import "@styles/Buttons/DownloadBtn.css";
 
@@ -12,38 +12,24 @@ export default function Game(){
         genres: [],
     });
 
-    const [gameSize, setGameSize] = useState();
-
-    async function createFile(){
-        const res = await fetch(`${game.game_files}`);
-        const data = await res.blob();
-        let metadata = {
-            type: '.zip'
-        }
-        const file = new File([data], 'test.zip', metadata)
-        setGameSize(parseFloat(file.size / 1000000))
-    }
-
-
     useEffect(()=>{
         fetch_game(location.pathname).then(res=>{
             setGame(res.data);
-            createFile();
         })
         .catch(err=>console.error(err));
         
     }, [])
 
     return (
-        <div className="flex flex-row justify-between gap-8 flex-wrap">
+        <div className="flex flex-row flex-wrap justify-between">
             <Trailer video_url={game.trailer}/>
 
-            <div className="flex flex-col gap-5">
-                <Details name={game.name} desc={game.desc} genres={game.genres} size={gameSize}/>
+            <div className="flex gap-4 flex-col">
+                <Details name={game.name} desc={game.desc} genres={game.genres}/>
                 <Download game_file={game.game_files}/>
             </div>
 
-            <div className="rounded-md w-[50%] overflow-hidden hidden lg:block shadow-2xl">
+            <div className="rounded-md w-[400px] h-[400px] overflow-hidden hidden lg:block">
                 <img className="w-full" src={`${game.cover}`}/>
             </div>
             
@@ -85,8 +71,6 @@ function Details({name, desc, genres, size}){
 
             <p className="text-lg text-[#b6b6b6]">{desc}</p>
 
-            <p>{size}Mb</p>
-
         </div>
     )
 }
@@ -95,11 +79,11 @@ function Download({game_file}){
 
     return (
         
-        <a href={game_file} target="_blank" className="button">
+        <a href={game_file} target="_blank" className="dw-button">
 
-            <i className="fa-solid fa-cloud-arrow-down"></i>
+            <i class="fa-brands fa-google-drive"></i>
 
-            <div className="text">
+            <div className="btn-text flex items-center gap-2">
                 Download
             </div>
 

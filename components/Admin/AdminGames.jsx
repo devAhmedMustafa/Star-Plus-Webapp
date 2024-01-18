@@ -1,6 +1,6 @@
 "use client"
 
-import { delete_game, fetch_games_list } from "@/utils/axios_games"
+import { delete_game, fetch_games_list } from "@/utils/AxiosGames"
 import { useEffect, useState } from "react"
 import "@styles/Buttons/DeleteBtn.css";
 
