@@ -26,8 +26,8 @@ const members = [
         role: "Music Composer",
     },
     {
-        name: 'Menna Hikal',
-        role: "Artist",
+        name: 'Tarek',
+        role: "3D Artist & Animator",
     }
 ]
 
