@@ -53,6 +53,7 @@ export default function UploadGame(){
         form.append('game_files', inputs.game_files)
         form.append('name', inputs.name);
         form.append('desc', inputs.desc);
+        form.append('logo', inputs.logo);
         form.append('genres', genres);
 
         add_game(form).then(res=> setUploading(false));
@@ -85,6 +86,10 @@ export default function UploadGame(){
 
                 <div className="textInputWrapper w-[400px]">
                     <input onChange={ChangeHandler} placeholder="Cover" type="text" name="cover" className="textInput"/>
+                </div>
+
+                <div className="textInputWrapper w-[400px]">
+                    <input onChange={ChangeHandler} placeholder="Logo" type="text" name="logo" className="textInput"/>
                 </div>
 
                 <div className="textInputWrapper w-[400px]">

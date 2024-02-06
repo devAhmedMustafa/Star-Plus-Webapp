@@ -26,9 +26,9 @@ export default function Assets(){
     ]
     return(
         <div className="flex flex-col gap-5">
-            <h1 className="text-center text-3xl mt-5">Assets</h1>
-            <Filter keywords={keywords}/>
-            <AssetsContainer/>
+            <h1 className="text-center text-3xl mt-5">Coming Soon...</h1>
+            {/* <Filter keywords={keywords}/>
+            <AssetsContainer/> */}
         </div>
     )
 }

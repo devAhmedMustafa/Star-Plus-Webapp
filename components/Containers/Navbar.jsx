@@ -17,7 +17,7 @@ export default function Navbar(){
             setUser(res.data);
             setLogged(true);
         })
-    }, [])
+    }, [logged])
 
     return (
         <nav className="flex flex-wrap px-2 justify-center md:justify-between items-center w-full sticky bg-[rgba(22,22,22,0.58)] rounded-full mt-2">
@@ -25,7 +25,7 @@ export default function Navbar(){
                 <Link href="/games">Games</Link>
                 <Link href="/assets">Assets</Link>
                 <Link href="/">About</Link>
-                <Link href="/">Contact</Link>
+                <Link href="/contact">Contact</Link>
             </Section>
 
             <Section extraClasses="justify-center items-center">
@@ -40,10 +40,13 @@ export default function Navbar(){
                     {/* If user is logged in show logout button and username */}
                     {
                         logged?
-                        <> 
-                            <p className="flex gap-2 items-center"><i class="fa-solid fa-circle-user text-2xl"></i>Hello {user.username}</p>
+                        <div className="relative flex gap-2"> 
+                            <p className="flex gap-2 items-center">
+                                <i class="fa-solid fa-circle-user text-2xl"></i>Hello {user.username}
+                            </p>
+                            {/* <UserInfo/> */}
                             <Logout/>
-                        </>:
+                        </div>:
                         <>
                             <Link className="border-r-[1px] pr-4 border-[#ffffff4b]" href="/login">Login</Link>
                             <Link href="/register">Sign Up</Link>
@@ -70,7 +73,7 @@ function Logout(){
     return (
         <button className="Btn" onClick={OnClickLogout}>
   
-            <div class="sign">
+            <div className="sign">
                 <i className="fa-solid fa-right-from-bracket text-[#1c1c1c]"></i>
             </div>
   

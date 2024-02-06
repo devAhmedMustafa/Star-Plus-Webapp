@@ -37,7 +37,8 @@ export default function RegisterForm(){
         const form = {
             'username': eForm.username.value,
             'email': eForm.email.value,
-            'password': eForm.password.value
+            'password': eForm.password.value,
+            'country': eForm.country.value
         }
 
         register(form).then((res)=>{
@@ -55,6 +56,12 @@ export default function RegisterForm(){
             <TextInput type="password" name="password"/>
             
             <TextInput type="password" name="confirm_password"/>
+
+            <select name="country" className="bg-[#252525] w-[300px] p-2 text-center rounded-md">
+                <option value="Egypt">Egypt</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Other">Other</option>
+            </select>
 
             <span>{errors.map((e)=> <p key={e} className="text-red-600 text-sm">{e}</p>)}</span>
 

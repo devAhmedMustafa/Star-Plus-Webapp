@@ -21,7 +21,7 @@ export default function Game(){
     }, [])
 
     return (
-        <div className="flex flex-row flex-wrap justify-between">
+        <div className="flex flex-col lg:flex-row w-full gap-4 justify-between overflow-hidden">
             <Trailer video_url={game.trailer}/>
 
             <div className="flex gap-4 flex-col">
@@ -29,8 +29,9 @@ export default function Game(){
                 <Download game_file={game.game_files}/>
             </div>
 
-            <div className="rounded-md w-[400px] h-[400px] overflow-hidden hidden lg:block">
+            <div className="rounded-md w-[600px] h-[600px] overflow-hidden hidden lg:block relative">
                 <img className="w-full" src={`${game.cover}`}/>
+                <img src={`${game.logo}`} alt="" className="absolute w-46 top-[30%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
             </div>
             
         </div>
@@ -41,9 +42,9 @@ function Trailer({video_url}){
 
     return (
         
-        <div className="overflow-hidden w-screen lg:h-screen lg:absolute top-0 left-0 -z-10">
+        <div className="overflow-hidden w-full lg:w-screen lg:h-screen lg:absolute top-0 left-0 -z-10">
 
-            <div className="absolute w-full h-full bg-[#1414146e]">
+            <div className="hidden lg:block absolute w-full h-full bg-[#1414146e]">
 
             </div>
 
@@ -62,7 +63,7 @@ function Trailer({video_url}){
 function Details({name, desc, genres, size}){
 
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 lg:w-[60%]">
             <h1 className="text-5xl font-extrabold">{name}</h1>
 
             <div className="flex gap-2">{genres.map((g)=>

@@ -8,39 +8,39 @@ export default function Oscillations(){
         let lastTime = null;
 
         function Animate(time) {
-        if (lastTime != null) {
-            angle += (time - lastTime) * 0.0006;
-        }
+            if (lastTime != null) {
+                angle += (time - lastTime) * 0.0006;
+            }
 
-        lastTime = time;
+            lastTime = time;
 
-        let wave = document.querySelector("#wave");
-        let paths = [...document.querySelectorAll("svg path")];
-        let width = window.innerWidth;
+            let wave = document.querySelector("#wave");
+            let paths = [...document.querySelectorAll("svg path")];
+            let width = window.innerWidth;
 
-        wave.setAttribute("width", width);
+            wave.setAttribute("width", width);
 
-        let i = 0;
+            let i = 0;
 
-        paths.forEach(path => {
-            path.setAttribute(
-            "d",
-            "M0," + i + " C" +
-            width * 0.33 +
-            "," +
-            (200 + Math.cos(angle) * 300) +
-            " " +
-            width * 0.9 +
-            "," +
-            (300 + Math.sin(angle) * 300) +
-            " " +
-            3000 +
-            "," + i + ""
-            );
-            i+=30;
-        });        
+            paths.forEach(path => {
+                path.setAttribute(
+                "d",
+                "M0," + i + " C" +
+                width * 0.33 +
+                "," +
+                (200 + Math.cos(angle) * 300) +
+                " " +
+                width * 0.9 +
+                "," +
+                (300 + Math.sin(angle) * 300) +
+                " " +
+                3000 +
+                "," + i + ""
+                );
+                i+=30;
+            });        
 
-        requestAnimationFrame(Animate);
+            requestAnimationFrame(Animate);
         }
 
         Animate();
