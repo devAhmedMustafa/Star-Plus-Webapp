@@ -1,12 +1,12 @@
 const members = [
-    { 
-        name: 'Ahmed Mustafa',
-        role: "System Designer & Animator",
-        insta: "https://www.instagram.com/ahmedmustafa.u/"
-    },
     {
         name: 'Saif Abdelkareem',
-        role: "Pixel Artist & Narrator",
+        role: "Game Designer",
+    },
+    { 
+        name: 'Ahmed Mustafa',
+        role: "Game Programmer",
+        insta: "https://www.instagram.com/ahmedmustafa.u/"
     },
     {
         name: 'Sohail Mohamed',
@@ -15,20 +15,48 @@ const members = [
     },
     {
         name: 'Abdelrahman Elbana',
-        role: "Mechanics Designer & Animator",
+        role: "Mechanics Designer",
     },
     {
         name: 'Habiba Hossam',
-        role: "Level Designer & Sound Designer",
+        role: "Level Designer",
+    },
+    {
+        name: "Mohamed Matar",
+        role: "Environment Artist",
+    },
+    {
+        name: "Dalia Talaat",
+        role: "Artist",
+    },
+    {
+        name: "Shimaa Nour",
+        role: "2D Artist",
+    },
+    {
+        name: "Roaa Ibrahim",
+        role: "2D Artist"
+    },
+    {
+        name: "Mohamed Karim",
+        role: "Pixel Artist"
+    },
+    {
+        name: "Ahmed AlaaEldin",
+        role: "Pixel Artist"
+    },
+    {
+        name: "Eyad Adel",
+        role: "3D Artist"
+    },
+    {
+        name: 'Tarek',
+        role: "3D Artist",
     },
     {
         name: 'Youssef Bouzayen',
         role: "Music Composer",
     },
-    {
-        name: 'Tarek',
-        role: "3D Artist & Animator",
-    }
 ]
 
 export default members
