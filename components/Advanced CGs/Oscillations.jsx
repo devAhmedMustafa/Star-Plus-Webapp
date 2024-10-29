@@ -46,7 +46,7 @@ export default function Oscillations(){
         Animate();
     })
     return (
-        <svg id="wave" className="svg w-full" viewBox="0 0 2400 800">
+        <svg id="wave" className="svg w-full h-full" viewBox="0 0 2400 800">
             <defs>
                 <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="oooscillate-grad">
                     <stop stopColor="#e500a4" stopOpacity="1" offset="0%"></stop>

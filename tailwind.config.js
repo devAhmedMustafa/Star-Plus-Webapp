@@ -6,6 +6,23 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    color:{
+      "primary": '#818cf8',
+      "accent-pink": "rgb(249 168 212)",
+      "accent-purble": "#6a00f4",
+      "accent-rose": "#e500a4",
+      "text-dark-1": "",
+      "text-dark-2": "",
+      "text-light-1": "",
+      "text-light-2": "",
+      "bg-dark-1": "",
+      "bg-dark-2": "",
+      "bg-dark-3": "",
+      "bg-light-1": "",
+      "bg-light-2": "",
+      "bg-light-3": "",
+
+    },
     extend: {
       dropShadow:{
         logoGlow:[

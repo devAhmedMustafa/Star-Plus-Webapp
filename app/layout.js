@@ -24,8 +24,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${dm_sans.className}`}>
         <GlobalContextProvider>
-          <div className='xl:w-[85%] 2xl:w-[75%] w-full m-auto flex flex-col gap-6 px-8 lg:p-0'>
-            <Navbar/>
+          <div className='w-full'>
             {children}
           </div>
         </GlobalContextProvider>
